@@ -5,9 +5,8 @@ import { harvestPlants } from "./harvester.js";
 
 const plan = createPlan()
 plantSeeds(plan)
-
 const plantedSeeds = usePlants()
-const allOutput = harvestPlants()
+const allOutput = harvestPlants(plantedSeeds)
 
 console.log(plan)
 console.log(plantedSeeds)

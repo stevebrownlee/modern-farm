@@ -1,11 +1,16 @@
 import { usePlants } from "./field.js"
 
-export const harvestPlants = () => {
-    const allPlants = usePlants()
+export const harvestPlants = (allPlants) => {
     const foodToSell = []
 
     allPlants.forEach(plant => {
-        for (let i = 0; i < plant.output; i++) {
+        let output = plant.output
+
+        if (plant.type === "Corn") {
+            output /= 2
+        }
+
+        for (let i = 0; i < output; i++) {
             foodToSell.push(plant)
         }
     })
