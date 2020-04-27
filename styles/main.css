@@ -13,7 +13,25 @@ textarea {
 	line-height: 1.5;
 }
 
+body {
+    background-color: lightgoldenrodyellow;
+}
+
 h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.plant {
+    flex-basis: 10%;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 4rem;
 }

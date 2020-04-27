@@ -1,5 +1,3 @@
-import { usePlants } from "./field.js"
-
 export const harvestPlants = (allPlants) => {
     const foodToSell = []
 
