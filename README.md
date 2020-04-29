@@ -138,6 +138,6 @@ Instead of displaying all object individually, show only one HTML representation
 
 ## Optional Challenge: Unique identifiers
 
-Add an incrementing `id` property to each harvested plant.
+Add a unique, incrementing `id` property to each harvested plant. The first plant harvested should have an `id` value of 1. The second one should have a value of 2, etc.
 
 

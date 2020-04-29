@@ -11,7 +11,11 @@ export const createPlan = () => {
         plan.push(row)
     }
 
-    return plan
+    return [
+        ["Corn", "Potato"],
+        ["Asparagus", "Soybean"],
+        ["Sunflower", "Wheat"],
+    ]
 }
 
 

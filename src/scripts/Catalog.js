@@ -1,4 +1,4 @@
-const Plant = plant => `<section class="plant">${plant.icon}</section>`
+const Plant = plant => `<section class="plant">${plant.type}</section>`
 
 export const Catalog = plants => {
     document.querySelector(".container").innerHTML = plants.map(Plant).join("")
