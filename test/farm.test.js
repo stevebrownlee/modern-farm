@@ -129,32 +129,3 @@ describe("Harvesting the grown plants", () => {
             .toEqual(6)
     })
 })
-
-
-const puppeteer = require("puppeteer")
-
-describe("HTML representation of harvest", () => {
-    test("Harvested plants are rendred to the DOM", async () => {
-        let browser = await puppeteer.launch({
-            headless: true
-        })
-        const page = await browser.newPage();
-        await page.goto("http://localhost:5000");
-        await page.waitForSelector(".plant")
-
-        let section = await page.$eval(".container", _ => _.innerHTML)
-
-        section = section.replace(/\n/g, "")
-        section = section.replace(/\s{2,}/g, "")
-
-        try {
-            expect(section).toBe(`<section class="plant">Corn</section><section class="plant">Corn</section><section class="plant">Corn</section><section class="plant">Corn</section><section class="plant">Corn</section><section class="plant">Corn</section><section class="plant">Potato</section><section class="plant">Potato</section><section class="plant">Asparagus</section><section class="plant">Asparagus</section><section class="plant">Asparagus</section><section class="plant">Asparagus</section><section class="plant">Soybean</section><section class="plant">Soybean</section><section class="plant">Soybean</section><section class="plant">Soybean</section><section class="plant">Sunflower</section><section class="plant">Sunflower</section><section class="plant">Sunflower</section><section class="plant">Wheat</section><section class="plant">Wheat</section><section class="plant">Wheat</section><section class="plant">Wheat</section><section class="plant">Wheat</section><section class="plant">Wheat</section>`);
-        }
-        catch (error) {
-            throw error
-        }
-        finally {
-            browser.close()
-        }
-    })
-})

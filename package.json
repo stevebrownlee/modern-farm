@@ -16,5 +16,6 @@
     "@babel/plugin-transform-modules-commonjs": "^7.9.0",
     "babel-jest": "^25.3.0",
     "jest": "^25.3.0"
-  }
+  },
+  "dependencies": {}
 }
