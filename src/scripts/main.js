@@ -5,14 +5,9 @@ import { harvestPlants } from "./harvester.js"
 import { Catalog } from "./Catalog.js"
 
 const plan = createPlan()
-console.log(plan)
-
 plantSeeds(plan)
 
 const plantedSeeds = usePlants()
-console.log(plantedSeeds)
-
 const harvestedPlants = harvestPlants(plantedSeeds)
-console.log(harvestedPlants)
 
 Catalog(harvestedPlants)
