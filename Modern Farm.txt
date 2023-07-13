@@ -1,0 +1,57 @@
+title Modern Farm
+
+
+
+
+main->plan: createPlan()
+activate plan
+loop #2f2e7b #white < 3
+loop #2f2e7b #white < 6
+plan->plan: add plant to row
+end
+plan->plan: add row to plan
+end
+
+main<--plan: plan array
+deactivate plan
+
+main->tractor: plan
+activate tractor
+loop #2f2e7b #white row in plan
+loop #2f2e7b #white plant type in row
+tractor->seedModule: create*()
+activate seedModule
+seedModule-->tractor: New seed
+deactivate seedModule
+tractor->field: addPlant()
+activate field
+field->field: Push seed to plants[]
+deactivate field
+end
+end
+deactivate tractor
+
+main->field: usePlants()
+activate field
+field-->main: planted seeds array
+deactivate field
+
+main->harvester: planted seeds
+activate harvester
+loop #2f2e7b #white plant in planted seeds
+harvester->harvester: Add plant to food array
+end
+harvester-->main: array of plants to sell
+deactivate harvester
+
+
+
+main->Catalog: plants to sell
+activate Catalog
+loop #2f2e7b #white plant in plants
+Catalog->Catalog: Generate plant HTML
+boundary DOM
+Catalog->DOM: Display plant
+end
+
+deactivate Catalog
